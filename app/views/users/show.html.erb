@@ -2,6 +2,13 @@
 
 <%= render @user %>
 
+<% if @user.microposts.present? %>
+  <h3>Your first post</h3>
+  <p>
+    <%= @user.microposts.first.content %>
+  </p>
+<% end %>
+
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
